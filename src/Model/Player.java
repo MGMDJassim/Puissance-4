@@ -1,14 +1,15 @@
 package Model;
 public abstract class Player {
-    private String couleur;
+    private Token token;
 
-    public Player(String couleur){
-        this.couleur = couleur;
+    public Player (Token token){
+        this.token = token;
     }
 
-    public String getCouleur(){
-        return couleur;
+    public Token getToken(){
+        return token;
     }
 
-    public abstract int choixcolonne();
+    public abstract int choixCol(Plateau plateau);
+
 }

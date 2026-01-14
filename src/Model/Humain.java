@@ -1,16 +1,16 @@
 package Model;
 import java.util.Scanner;
 
-public class Humain extends Player{
-    private static Scanner scanner = new Scanner(System.in);
+public class Humain extends Player {
 
-    public Humain(String color) {
-        super(color);
+
+    public Humain(Token token) {
+        super(token);
     }
 
     @Override
-    public int choixcolonne() {
-        return scanner.nextInt();
+    public int choixCol(Plateau plateau) {
+        return -1;
     }
 
 }
