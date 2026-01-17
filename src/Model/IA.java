@@ -7,6 +7,6 @@ public class IA extends Player{
 
     @Override
     public int choixCol(Plateau plateau) {
-        return 0;
+        return 7;
     }
 }

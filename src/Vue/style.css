@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Press Start 2P";
+    src: url("PressStart2P-Regular.ttf");
+}
+
+/* ----- Style général ----- */
+.root {
+    -fx-background-color: #1e1e1e;
+    -fx-font-family: "Press Start 2P";
+}
+
+.title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-font-family: "Press Start 2P";
+    -fx-fill: #ffffff;
+}
+
+/* Style Minecraft */
+.button {
+    -fx-pref-width: 240px;
+    -fx-pref-height: 48px;
+
+    /* Couleur verte Minecraft */
+    -fx-background-color: #3c8527;
+    -fx-text-fill: #ffffff;
+
+    /* Police épaisse (Minecraft-like) */
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    /* Style pixelisé */
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+
+    /* Bordure noire épaisse */
+    -fx-border-color: #000000;
+    -fx-border-width: 4px;
+
+    /* Ombre façon pixel */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 0, 0, 4, 4);
+
+    -fx-cursor: hand;
+}
+
+/* Survol : éclaircir comme dans Minecraft */
+.button:hover {
+    -fx-background-color: #4ca832;
+}
+
+/* Clic : effet enfoncé */
+.gaming-button:pressed {
+    -fx-background-color: #2e6b1c;
+    -fx-translate-y: 2;
+}
+
+
+
+.vbox {
+    -fx-alignment: center;
+}
+
+
+#plateau {
+    -fx-background-color: #0057A6;
+    -fx-padding: 20;
+    -fx-hgap: 20;
+    -fx-vgap: 10;
+
+    -fx-border-color: #000000;
+    -fx-border-width: 6px;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 0, 0, 6, 6);
+}
+
+
+.cell {
+    -fx-background-color: #c6c6c6; /* gris clair pixel */
+    -fx-min-width: 80px;
+    -fx-min-height: 80px;
+
+    -fx-background-radius: 0; /* carré pixelisé */
+    -fx-border-radius: 0;
+
+    -fx-border-color: #000000;
+    -fx-border-width: 3px;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 0, 0, 4, 4);
+
+
+
+}
+
+
+.plateau {
+    -fx-alignment: center;
+}
+
+
+.p1 {
+    -fx-background-color: #b02e26; /* rouge Minecraft */
+}
+
+.p2 {
+    -fx-background-color: #f2d52f; /* jaune Minecraft */
+}
+
+
+
+/* Animation légère au survol (si tu veux rendre les colonnes interactives) */
+.column-hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+}
