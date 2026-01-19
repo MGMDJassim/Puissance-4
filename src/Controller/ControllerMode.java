@@ -1,11 +1,11 @@
 package Controller;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import Model.ManagementJeu;
 import Model.ModeJeu;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -18,17 +18,9 @@ public class ControllerMode {
     private Scene scene;
     private Parent root;
 
-    @FXML
-    private Button btn;
-    @FXML
-    private Button btn1;
-    @FXML
-    private Button btn2;
-    @FXML
-    private Button btn3;
 
     public void chargementMode(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/Vue/plateau.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Vue/plateau.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -47,7 +39,7 @@ public class ControllerMode {
     }
 
     public void btnRetour(ActionEvent event) throws Exception {
-        root = FXMLLoader.load(getClass().getResource("/Vue/demarrage.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Vue/demarrage.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

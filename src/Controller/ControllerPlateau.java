@@ -3,28 +3,30 @@ package Controller;
 import Model.Plateau;
 import Model.Token;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-
+import javafx.stage.Stage;
+import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ControllerPlateau implements Initializable {
 
     @FXML
     private GridPane plateau;
-    @FXML
-    private BorderPane root;
     private Plateau pl;
     private Pane[][] cells;
-
     private Logic logic;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -72,8 +74,6 @@ public class ControllerPlateau implements Initializable {
         });
     }
 
-
-
     private void updateCell(int row, int col, Token token) {
         Pane cell = cells[row][col];
         if (token == Token.RED) {
@@ -81,5 +81,16 @@ public class ControllerPlateau implements Initializable {
         } else {
             cell.getStyleClass().add("p2");
         }
+    }
+
+
+
+    public void retour(javafx.event.ActionEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Vue/modeJeu.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
     }
 }
